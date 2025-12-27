@@ -1,4 +1,5 @@
 "use client";
+import SectionTitle from "@/components/common/Headers/SectionTitle";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
@@ -66,6 +67,9 @@ export default function IndoorSlider() {
 
   return (
     <section className="w-full py-10 md:py-20 overflow-hidden">
+          <div className="flex justify-center mb-12">
+                               <SectionTitle title={"Indoor"}/>
+                            </div>
       <div
         ref={sliderRef}
         className="w-full overflow-x-scroll overflow-y-hidden scrollbar-hide cursor-grab"
@@ -81,7 +85,7 @@ export default function IndoorSlider() {
           {[...slides, ...slides, ...slides].map((item, i) => (
             <div
               key={i}
-              className="w-[350px] md:w-[400px] lg:w-[600px] mx-6 flex-shrink-0 backdrop-blur-lg rounded-2xl p-6"
+              className="w-[400px]  lg:w-[600px] mx-6 flex-shrink-0 backdrop-blur-lg rounded-2xl p-6"
             >
               <div className="mb-4 flex justify-center">
                 <div className="relative w-full h-82 rounded-xl p-4 border-2 border-dashed border-[#70C879] flex items-center justify-center">
