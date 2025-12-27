@@ -67,7 +67,7 @@ export default function ContactSection() {
     <>
       <section
         ref={sectionRef}
-        className="relative w-full bg-black text-white py-20 px-6 md:px-16 overflow-hidden"
+        className="relative w-full bg-black text-white py-20  overflow-hidden"
       >
         {/* Circuit lines - bottom left (Figma accurate) */}
         <div className="absolute hidden md:block -bottom-10 lg:bottom-0 left-0 z-0 pointer-events-none">
@@ -162,5 +162,3 @@ export default function ContactSection() {
     </>
   );
 }
-
-
