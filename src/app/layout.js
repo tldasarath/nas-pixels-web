@@ -40,25 +40,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html 
-    lang="en"
-    className={`${geistSans.variable} ${geistMono.variable}`}>
+      lang="en" 
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable} ${inter.variable}`}
+    >
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body
-        className={`antialiased`}
-      >
-        {/* <main className="min-h-screen"> */}
-         <SmoothScrollProvider>
+      <body className="antialiased" suppressHydrationWarning>
+        <SmoothScrollProvider>
           <Navbar />
-<main className="app-content">
-    {children}
-  </main>         </SmoothScrollProvider>
-          {/* </main> */}
-     
+          <main className="app-content">
+            {children}
+          </main>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

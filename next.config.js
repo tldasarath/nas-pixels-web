@@ -9,7 +9,14 @@ const nextConfig = {
       },
     },
   },
-  
+    images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+      },
+    ],
+  },
   // Or disable Turbopack completely
   // (remove --turbo flag from dev script instead)
 };

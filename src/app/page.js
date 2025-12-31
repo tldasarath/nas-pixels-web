@@ -11,6 +11,9 @@ import WhyChooseUs from '@/components/ui/home/WhyChooseUs';
 import LatestNewsSection from '@/components/ui/home/LatestNewsSection';
 import OurProjectsSection from '@/components/ui/home/OurProjectsSection';
 import ProjectsSection from '@/components/ui/home/ProjectsSection';
+import CurvedHeroGallery from '@/components/ui/Hero/CurvedHeroGallery';
+import CurvedHeroArc from '@/components/ui/Hero/CurvedHeroArc';
+import Footer from '@/components/common/Footer/Footer';
 
 
 export default function Home() {
@@ -21,6 +24,8 @@ export default function Home() {
       {/* <ImageRing3D/>
       <Demo/>
 <HeroSection/> */}
+{/* <CurvedHeroArc/> */}
+<CurvedHeroGallery/>
       <AboutSection />
       
       {/* <section className=''>
@@ -64,6 +69,8 @@ export default function Home() {
       <TestimonialsSection/>
       <FaqSection/>
       <ContactSection/>
+            <Footer/>
+      
     </div>
   );
 }
