@@ -64,7 +64,7 @@ export default function ContactSection() {
   return (
     <>
       <section
-        ref={sectionRef}
+        ref={sectionRef} id="contact"
         className="relative w-full bg-black text-white py-20  overflow-hidden"
       >
         {/* Circuit lines */}
