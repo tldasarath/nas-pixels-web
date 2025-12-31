@@ -7,27 +7,27 @@ import SectionTitle from "@/components/common/Headers/SectionTitle";
 
 const NEWS = [
   {
-    title: "New LED technology trends",
+    title: "Digital Signage Trends Transforming Brand Communication in Dubai",
     desc:
-      "Morem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euest turpis molestie, dictum est.",
+      "Discover how digital signage solutions transform brand communication across retail corporate hospitality environments worldwide today",
     img: "/assets/images/news/news-1.png",
   },
   {
-    title: "New LED technology trends",
+    title: "Smart Home Automation Trends 2026 in UAE",
     desc:
-      "Morem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euest turpis molestie, dictum est.",
+      "Explore smart home automation trends enhancing comfort security energy efficiency modern residential living spaces globally",
     img: "/assets/images/news/news-2.png",
   },
   {
-    title: "New LED technology trends",
+    title: "Advanced Audiovisual Integration for Modern Workspaces in UAE",
     desc:
-      "Morem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euest turpis molestie, dictum est.",
+      "Learn how advanced audiovisual integration improves collaboration engagement performance workplaces education venues and large environments",
     img: "/assets/images/news/news-3.png",
   },
   {
-    title: "New LED technology trends",
+    title: "Innovative Lighting Technologies for Architectural Spaces in Dubai",
     desc:
-      "Morem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euest turpis molestie, dictum est.",
+      "Understand innovative lighting technologies shaping architectural aesthetics sustainability intelligent indoor outdoor spaces for future projects",
     img: "/assets/images/news/news-4.png",
   },
 ];
@@ -43,8 +43,7 @@ export default function LatestNewsSection() {
           </div>
 
           <p className="text-gray-300 text-sm md:text-[20px] max-w-2xl  font-medium leading-relaxed">
-            Morem ipsum dolor sit amet, consectetur adipiscing elit.
-            Etiam eu turpis molestie, dictum est a, mattis tellus.
+          Explore updates, trends, and expert insights in digital signage, AV systems, smart automation, lighting, and content technologies.
           </p>
         </div>
 

@@ -8,9 +8,7 @@ export default function TestimonialCard({data}) {
         sm:max-w-[520px]
         md:max-w-[638px]
         lg:max-w-[822px]
-        border-2
-        border-dotted
-        border-[#70C879]
+     
         rounded-xl
         px-4 sm:px-6
         py-6 sm:py-8

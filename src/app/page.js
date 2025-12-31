@@ -14,6 +14,8 @@ import ProjectsSection from '@/components/ui/home/ProjectsSection';
 import CurvedHeroGallery from '@/components/ui/Hero/CurvedHeroGallery';
 import CurvedHeroArc from '@/components/ui/Hero/CurvedHeroArc';
 import Footer from '@/components/common/Footer/Footer';
+import ProductsSection from '@/components/ui/home/ProductsSection';
+import TestimonialsFaqSection from '@/components/ui/home/TestimonialsFaqSection';
 
 
 export default function Home() {
@@ -63,11 +65,13 @@ export default function Home() {
         targetSize={{ widthVw: 90, heightVh: 90, borderRadius: 12 }}
       />
       </section> */}
+      <ProductsSection/>
       <WhyChooseUs/>
       <ProjectsSection/>
       <LatestNewsSection/>
-      <TestimonialsSection/>
-      <FaqSection/>
+      <TestimonialsFaqSection/>
+      {/* <TestimonialsSection/>
+      <FaqSection/> */}
       <ContactSection/>
             <Footer/>
       
