@@ -4,6 +4,11 @@ import Navbar from "@/components/common/Navbar/Navbar";
 import Herosection from "@/components/TitleBanner/TitleBanner";
 import React from "react";
 import ContactSection from "@/components/ui/contact/ContactSection";
+import TestFooter from "@/components/common/Footer/TestFooter";
+import Footer from "@/components/common/Footer/Footer";
+import AboutNasPixels from "@/components/ui/AboutPage/AboutNasPixels";
+import CoreServices from "@/components/ui/AboutPage/CoreServices";
+import BottomBanner from "@/components/ui/AboutPage/BottomBanner";
 
 const page = () => {
   return (
@@ -16,7 +21,11 @@ const page = () => {
       />
       <AboutSection />
       <MissionVisionSection />
+      <AboutNasPixels/>
+      <CoreServices/>
+      <BottomBanner/>
       <ContactSection/>
+      <Footer/>
     </div>
   );
 };

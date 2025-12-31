@@ -1,21 +1,11 @@
 import Image from "next/image";
 import Container from "../../common/Layout/Container";
+import PillerAnimation from "@/components/animation/PillerAnimation";
 
 export default function MissionVisionSection() {
     return (
         <section className="relative w-full   py-10 md:py-20">
-            <div className="hidden md:block absolute inset-y-0 left-0 w-[90px] 
-    bg-[linear-gradient(180deg,rgba(112,200,121,0.5)_50%,rgba(112,200,121,0.15)_100%,rgba(112,200,121,0.5)_100%)]
-    blur-2xl pointer-events-none">
-            </div>
-
-            {/* RIGHT GLOW */}
-            <div className="hidden md:block absolute inset-y-0 right-0 w-[90px] 
-    bg-[linear-gradient(180deg,rgba(112,200,121,0.5)_50%,rgba(112,200,121,0.15)_100%,rgba(112,200,121,0.5)_100%)]
-    blur-2xl pointer-events-none">
-            </div>
-
-
+         <PillerAnimation/>
             <Container>
                 <div className=" grid grid-cols-1 md:grid-cols-2 gap-10">
 

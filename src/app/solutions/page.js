@@ -1,5 +1,6 @@
 import Footer from '@/components/common/Footer/Footer'
 import TestFooter from '@/components/common/Footer/testFooter'
+import SolutionsSection from '@/components/SolutionsPage/SolutionsSection'
 import Herosection from '@/components/TitleBanner/TitleBanner'
 import IndoorSlider from '@/components/ui/ProjectPage/IndoorSlide'
 import OutdoorSection from '@/components/ui/ProjectPage/OutdoorSection'
@@ -9,11 +10,9 @@ const page = () => {
   return (
        <div>
       <Herosection
-        title={"PROJECTS"}
-       
+        title={"SOLUTIONS"}
       />
-      <IndoorSlider/>
-      <OutdoorSection/>
+      <SolutionsSection/>  
       <Footer/>
      
     </div>
