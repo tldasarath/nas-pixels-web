@@ -2,18 +2,14 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SectionTitle from "@/components/common/Headers/SectionTitle";
 import Container from "@/components/common/Layout/Container";
 import Image from "next/image";
 
-/**
- * INTERVAL-BASED INFINITE MARQUEE (FIXED CURVE)
- * - Interval sliding (slide → rest)
- * - Infinite & seamless
- * - Correct logo alignment
- * - Gentle curved illusion (no misplacement)
- * - Pause on hover
- */
+gsap.registerPlugin(ScrollTrigger);
+
+/* ---------------- DATA ---------------- */
 
 const BRANDS = [
   { name: "ADCB", src: "/assets/images/partners/pr-1.png" },
@@ -46,55 +42,123 @@ const BRANDS = [
   { name: "Al Futtaim", src: "/assets/images/partners/pr-28.png" },
 ];
 
-// SAFE, REPEATING ARC (px)
+/* Gentle curvature */
 const ARC_Y = [-6, -3, 0, 3, 6, 3, 0, -3];
 
 export default function TrustedBrandsSection() {
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const pillRef = useRef(null);
   const trackRef = useRef(null);
-  const timelineRef = useRef(null);
+  const logoRefs = useRef([]);
+  const marqueeTl = useRef(null);
 
+  /* ---------------- ENTRANCE ANIMATION ---------------- */
   useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Initial states
+      gsap.set(titleRef.current, { y: -40, autoAlpha: 0 });
+      gsap.set(pillRef.current, { y: 60, autoAlpha: 0 });
+      gsap.set(logoRefs.current, { y: 40, autoAlpha: 0 });
+
+      const introTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          toggleActions: "play none none reset",
+        },
+      });
+
+      introTl
+        // Title from top
+        .to(titleRef.current, {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.8,
+          ease: "power3.out",
+        })
+
+        // Pill from bottom
+        .to(
+          pillRef.current,
+          {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.9,
+            ease: "power3.out",
+          },
+          "-=0.4"
+        )
+
+        // Logos staggered in
+        .to(
+          logoRefs.current,
+          {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.6,
+            ease: "power3.out",
+            stagger: {
+              each: 0.08,
+              from: "start",
+            },
+            onComplete: startMarquee,
+          },
+          "-=0.2"
+        );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  /* ---------------- MARQUEE (STARTS AFTER INTRO) ---------------- */
+  const startMarquee = () => {
+    if (marqueeTl.current) return;
+
     const track = trackRef.current;
     if (!track) return;
 
     const totalWidth = track.scrollWidth / 2;
     const STEP_DISTANCE = totalWidth / BRANDS.length;
 
-    const MOVE_DURATION = 0.9;
-    const PAUSE_DURATION = 1.3;
-
-    const tl = gsap.timeline({
+    marqueeTl.current = gsap.timeline({
       repeat: -1,
       defaults: { ease: "power2.inOut" },
     });
 
     for (let i = 0; i < BRANDS.length * 2; i++) {
-      tl.to(track, {
-        x: `-=${STEP_DISTANCE}`,
-        duration: MOVE_DURATION,
-        modifiers: {
-          x: (x) => `${parseFloat(x) % totalWidth}px`,
-        },
-      }).to({}, { duration: PAUSE_DURATION });
+      marqueeTl.current
+        .to(track, {
+          x: `-=${STEP_DISTANCE}`,
+          duration: 0.9,
+          modifiers: {
+            x: (x) => `${parseFloat(x) % totalWidth}px`,
+          },
+        })
+        .to({}, { duration: 1.2 });
     }
+  };
 
-    timelineRef.current = tl;
-    return () => tl.kill();
-  }, []);
-
-  const pause = () => timelineRef.current?.pause();
-  const play = () => timelineRef.current?.play();
+  const pause = () => marqueeTl.current?.pause();
+  const play = () => marqueeTl.current?.play();
 
   return (
-    <section className="relative w-full bg-black py-16 md:py-24 overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative w-full bg-black py-16 md:py-24 overflow-hidden"
+    >
       <Container>
         {/* Heading */}
-        <div className="w-full flex justify-center mb-12">
+        <div
+          ref={titleRef}
+          className="w-full flex justify-center mb-12"
+        >
           <SectionTitle title="Our Trusted Partners" ClrGradet1="#70C879" />
         </div>
 
         {/* Pill Container */}
         <div
+          ref={pillRef}
           className="
             relative mx-auto
             max-w-6xl
@@ -123,10 +187,9 @@ export default function TrustedBrandsSection() {
               return (
                 <div
                   key={index}
+                  ref={(el) => (logoRefs.current[index] = el)}
                   className="flex items-center justify-center flex-shrink-0 w-[120px] md:w-[140px]"
-                  style={{
-                    transform: `translateY(${y}px)`,
-                  }}
+                  style={{ transform: `translateY(${y}px)` }}
                 >
                   <Image
                     src={brand.src}

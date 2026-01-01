@@ -17,6 +17,8 @@ import Footer from '@/components/common/Footer/Footer';
 import ProductsSection from '@/components/ui/home/ProductsSection';
 import TestimonialsFaqSection from '@/components/ui/home/TestimonialsFaqSection';
 import TrustedBrandsSection from '@/components/ui/Hero/TrustedBrandsSection';
+import { HeroSectionNew } from '@/components/ui/HeroSection';
+import { myImages } from '@/data/HeroSectionData';
 
 
 export default function Home() {
@@ -24,11 +26,17 @@ export default function Home() {
 
   return (
     <div className="min-h-screen ">
-      {/* <ImageRing3D/>
-      <Demo/>
-<HeroSection/> */}
-{/* <CurvedHeroArc/> */}
-<CurvedHeroGallery/>
+      {/* <HeroSectionNew/> */}
+      <ImageRing3D 
+  images={myImages}
+  backgroundImage="/assets/images/testimonials/testimonial-bg.png"
+  title="Transform Visual Communication with Enterprise-Grade LED Display Solutions"
+  buttonText="Our Products"
+/>
+      {/* <Demo/>
+<HeroSection/>
+<CurvedHeroArc/>
+<CurvedHeroGallery/> */}
       <AboutSection />
       
       {/* <section className=''>

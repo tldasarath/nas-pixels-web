@@ -15,9 +15,9 @@ export default function AboutCard({
         overflow-hidden
       "
       style={{
-        border: "3px solid #70C879",
+        border: "5px solid #70C879",
         boxSizing: "border-box",
-        boxShadow: "0 0 18px rgba(112, 200, 121, 0.55)",
+        boxShadow: "0 0 20px rgba(112, 200, 121, 0.55)",
       }}
     >
       {/* INNER CONTENT */}
