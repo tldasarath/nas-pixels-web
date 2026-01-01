@@ -1,10 +1,12 @@
 import { ModernButton } from "@/components/common/Button/ModernButton";
+import { useRouter } from "next/navigation";
 import SectionTitle from "@/components/common/Headers/SectionTitle";
 import React, { useEffect, useRef, forwardRef } from "react";
 
 
 // AboutCard Component
 const AboutCard = forwardRef(({ title, description, icon, rotate = "", offset = "" }, ref) => {
+ 
   return (
     <div
       ref={ref}
@@ -76,9 +78,11 @@ const AboutSection = () => {
   const sectionRef = useRef(null);
   const textRef = useRef(null);
   const cardRefs = useRef([]);
+     const router = useRouter();
+
 
   const handleClick = () => {
-    console.log('More About Us clicked!');
+    router.push("/about-us")
   };
 
   return (
