@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, forwardRef } from "react";
 import { ModernButton } from "@/components/common/Button/ModernButton";
+import { useRouter } from "next/navigation";
 import SectionTitle from "@/components/common/Headers/SectionTitle";
 import Container from "@/components/common/Layout/Container";
 import gsap from "gsap";
@@ -127,46 +128,71 @@ export default function AboutSection() {
         });
       });
 
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top 70%",
-        onEnter: () => {
-          const tl = gsap.timeline();
+    ScrollTrigger.create({
+  trigger: sectionRef.current,
+  start: "top 70%",
+  onEnter: () => {
+    const tl = gsap.timeline();
 
-          tl.to([titleRef.current, textRef.current], {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            stagger: 0.15,
-          })
-            .to(
-              buttonRef.current,
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                ease: "power3.out",
-              },
-              "-=0.3"
-            )
-            .to(
-              cardRefs.current,
-              {
-                opacity: 1,
-                x: 0,
-                y: 0,
-                duration: 0.8,
-                ease: "power3.out",
-                stagger: 0.15,
-              },
-              "-=0.2"
-            );
+    tl.to([titleRef.current, textRef.current], {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power3.out",
+      stagger: 0.15,
+    })
+      .to(
+        buttonRef.current,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power3.out",
         },
-        onLeaveBack: () => {
-          ScrollTrigger.refresh();
+        "-=0.3"
+      )
+      .to(
+        cardRefs.current,
+        {
+          opacity: 1,
+          x: 0,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.15,
         },
+        "-=0.2"
+      );
+  },
+
+  // 🔥 THIS IS THE KEY
+  onLeaveBack: () => {
+    gsap.set([titleRef.current, textRef.current], {
+      opacity: 0,
+      y: -40,
+    });
+
+    gsap.set(buttonRef.current, {
+      opacity: 0,
+      y: 40,
+    });
+
+    const fromCorners = [
+      { x: -80, y: -80 },
+      { x: 80, y: -80 },
+      { x: -80, y: 80 },
+      { x: 80, y: 80 },
+    ];
+
+    cardRefs.current.forEach((card, i) => {
+      gsap.set(card, {
+        opacity: 0,
+        ...fromCorners[i],
       });
+    });
+  },
+});
+
 
     }, sectionRef);
 
