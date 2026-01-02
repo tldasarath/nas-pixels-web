@@ -34,7 +34,7 @@ export default function Home() {
       />
       {/* <ProductsSection/> */}
       {/* <TrustedBrandsSection/> */}
-      <SolutionsSection/>
+      {/* <SolutionsSection/> */}
       <WhyChooseUs/>
       <ProjectsSection/>
       <LatestNewsSection/>

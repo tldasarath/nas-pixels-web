@@ -15,33 +15,40 @@ export default function AnimateScrollVideo({ media }) {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: rootRef.current,
           start: "top top",
-          end: "+=350%",              
+          end: "+=350%",
           scrub: true,
           pin: true,
-          pinSpacing: true,         
+          pinSpacing: true,
           anticipatePin: 1,
         },
       });
 
       /* 1️⃣ Video grows to fullscreen */
-      tl.to(videoRef.current, {
-        width: "100vw",
-        height: "100vh",
-        borderRadius: 0,
-        ease: "power2.out",
-      }, 0);
+      tl.to(
+        videoRef.current,
+        {
+          width: "100vw",
+          height: "100vh",
+          borderRadius: 0,
+          ease: "power2.out",
+        },
+        0
+      );
 
       /* 2️⃣ Text exits cleanly */
-      tl.to(textRef.current, {
-        y: -140,
-        opacity: 0,
-        ease: "power3.out",
-      }, 0.15);
+      tl.to(
+        textRef.current,
+        {
+          y: -140,
+          opacity: 0,
+          ease: "power3.out",
+        },
+        0.15
+      );
 
       /* 3️⃣ Reveal layer completes BEFORE unpin */
       tl.fromTo(
@@ -50,7 +57,6 @@ export default function AnimateScrollVideo({ media }) {
         { y: "0%", ease: "power3.out" },
         0.55
       );
-
     }, rootRef);
 
     return () => ctx.revert();
@@ -90,18 +96,15 @@ export default function AnimateScrollVideo({ media }) {
         <h1 className="text-white text-6xl md:text-8xl font-bold">
           Welcome to the Future
         </h1>
-        <p className="text-gray-300 text-xl mt-4">
-          Experience the next generation of web design
+        <p className="text-gray-300 text-xl mt-4 max-w-2xl">
+          Advanced LED display solutions for powerful, immersive visual
+          experiences.
         </p>
       </div>
 
       {/* REVEAL LAYER */}
-      <div
-        ref={revealRef}
-        className="absolute inset-0 z-30 bg-black"
-      >
-              <ProductsSection/>
-        
+      <div ref={revealRef} className="absolute inset-0 z-30 bg-black">
+        <ProductsSection />
       </div>
     </section>
   );

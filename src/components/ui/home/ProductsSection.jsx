@@ -313,7 +313,7 @@ function CenterImage({ active }) {
       </div>
 
       {/* DETAILS SCROLL BELOW IMAGE */}
-      <div className="mt-8 space-y-4 text-sm text-white/80">
+      <div className="mt-6 space-y-4 text-sm text-white/80">
 
         {/* Category */}
         {/* <div className="text-[#70C879] text-xs uppercase tracking-wider">
