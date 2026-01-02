@@ -115,7 +115,7 @@ export default function ProductsSection() {
   const rows = [...new Set(products.map((p) => p.row))];
 
   return (
-    <section className="relative py-10 md:py-20  overflow-hidden">
+    <section className="relative py-10 md:pt-8  overflow-hidden">
          
         <PillerAnimation/>
       <Container>

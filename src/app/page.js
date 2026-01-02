@@ -2,23 +2,17 @@
 import AnimateScrollVideo from '@/components/animation/scroll-animated-video';
 import AboutSection from '@/components/ui/about/AboutSection';
 import ContactSection from '@/components/ui/contact/ContactSection';
-import FaqSection from '@/components/ui/faq/FaqSection';
-import Demo from '@/components/ui/Hero/Demo';
-import HeroSection from '@/components/ui/Hero/HeroSection';
 import ImageRing3D from '@/components/ui/Hero/ImageRing3D';
-import TestimonialsSection from '@/components/ui/testimonials/TestimonialsSection';
 import WhyChooseUs from '@/components/ui/home/WhyChooseUs';
 import LatestNewsSection from '@/components/ui/home/LatestNewsSection';
-import OurProjectsSection from '@/components/ui/home/OurProjectsSection';
-import ProjectsSection from '@/components/ui/home/ProjectsSection';
-import CurvedHeroGallery from '@/components/ui/Hero/CurvedHeroGallery';
-import CurvedHeroArc from '@/components/ui/Hero/CurvedHeroArc';
+import ProjectsSection from '@/components/ui/projects/ProjectsSection';
 import Footer from '@/components/common/Footer/Footer';
-import ProductsSection from '@/components/ui/home/ProductsSection';
 import TestimonialsFaqSection from '@/components/ui/home/TestimonialsFaqSection';
-import TrustedBrandsSection from '@/components/ui/Hero/TrustedBrandsSection';
-import { HeroSectionNew } from '@/components/ui/HeroSection';
+import TrustedBrandsSection from '@/components/ui/home/TrustedBrandsSection';
 import { myImages } from '@/data/HeroSectionData';
+import PartnersSection from '@/components/ui/home/PartnersSection';
+import SolutionsSection from '@/components/ui/home/SolutionsSection';
+
 
 
 export default function Home() {
@@ -26,59 +20,25 @@ export default function Home() {
 
   return (
     <div className="min-h-screen ">
-      {/* <HeroSectionNew/> */}
       <ImageRing3D 
-  images={myImages}
-  backgroundImage="/assets/images/testimonials/testimonial-bg.png"
-  title="Transform Visual Communication with Enterprise-Grade LED Display Solutions"
-  buttonText="Our Products"
-/>
-      {/* <Demo/>
-<HeroSection/>
-<CurvedHeroArc/>
-<CurvedHeroGallery/> */}
-      <AboutSection />
-      
-      {/* <section className=''>
-    <AnimateScrollVideo
+        images={myImages}
+        backgroundImage="/assets/images/testimonials/testimonial-bg.png"
+        title="Transform Visual Communication with Enterprise-Grade LED Display Solutions"
+        buttonText="Our Products"
+      />
+      <AboutSection />   
+      <AnimateScrollVideo
         media={{
           mp4: "/assets/videos/screen-installation-and-configuration.mp4",
-          webm: "/assets/videos/screen-installation-and-configuration.mp4"
         }}
-        overlay={{
-          caption: "NEXT.JS • 15",
-          heading: "Modern Web Animation",
-          paragraphs: [
-            "A focused reel highlighting interaction, craft, and intent.",
-            "Built with GSAP ScrollTrigger and Lenis smooth scroll in Next.js 15."
-          ],
-          extra: (
-            <div style={{ marginTop: '2rem' }}>
-              <button 
-                style={{
-                  background: 'linear-gradient(135deg, #7c3aed, #22d3ee)',
-                  color: 'white',
-                  border: 'none',
-                  padding: '12px 24px',
-                  borderRadius: '8px',
-                  fontWeight: '600',
-                  cursor: 'pointer'
-                }}
-              >
-                Explore More
-              </button>
-            </div>
-          )
-        }}
-        initialBoxSize={320}
-        targetSize={{ widthVw: 90, heightVh: 90, borderRadius: 12 }}
       />
-      </section> */}
-      <ProductsSection/>
-      <TrustedBrandsSection/>
+      {/* <ProductsSection/> */}
+      {/* <TrustedBrandsSection/> */}
+      <SolutionsSection/>
       <WhyChooseUs/>
       <ProjectsSection/>
       <LatestNewsSection/>
+      <PartnersSection/>
       <TestimonialsFaqSection/>
       {/* <TestimonialsSection/>
       <FaqSection/> */}
