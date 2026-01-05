@@ -4,8 +4,8 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SolutionCard from "./SolutionCard";
 import { solutions } from "@/data/solutionsData";
-import PillerAnimation from "../animation/PillerAnimation";
-import Container from "../common/layout/Container";
+import PillerAnimation from "../../animation/PillerAnimation";
+import Container from "../../common/layout/Container";
 
 gsap.registerPlugin(ScrollTrigger);
 

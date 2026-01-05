@@ -34,7 +34,7 @@ export default function StarToSolutionsScene() {
         scrollTrigger: {
           trigger: starRef.current,
           start: "top top",
-          end: "+=800%", // Extended to accommodate all phases
+          end: "+=800%", 
           scrub: true,
           pin: true,
           anticipatePin: 1,
@@ -60,7 +60,7 @@ export default function StarToSolutionsScene() {
 
       /* PHASE 3 - Text zoom */
       tl.to(textRef.current, {
-        scale: 14,
+        scale: 8,
         transformOrigin: "center center",
         duration: 2,
         ease: "power3.inOut",
@@ -160,7 +160,7 @@ export default function StarToSolutionsScene() {
         {/* SOLUTIONS SECTION (REVEALED IN PLACE) */}
         <div
           ref={solutionsRef}
-          className="absolute inset-0 z-40 overflow-hidden"
+          className="absolute inset-0 z-40 overflow-hidden bg-white"
         >
           <SolutionsSection/>
         </div>
