@@ -200,7 +200,7 @@ const router =useRouter()
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-black py-20">
+    <section ref={sectionRef} className="bg-black py-20 overflow-hidden">
       <Container>
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 lg:grid-cols-[1fr_1.15fr]">
           
