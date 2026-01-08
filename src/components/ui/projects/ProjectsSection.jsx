@@ -21,7 +21,7 @@ export default function ProjectsSection() {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const descRef = useRef(null);
-   const router = useRouter();
+  const router = useRouter();
 
   /* ---------------- AURORA (UNCHANGED) ---------------- */
   useEffect(() => {
@@ -128,13 +128,13 @@ export default function ProjectsSection() {
               </div>
 
               {/* DESCRIPTION (use <br> for line control) */}
-<p
-  ref={descRef}
-  className="text-white text-sm md:text-xl font-medium leading-relaxed"
->
-  We craft impactful visual solutions that elevate brands, engage audiences,
-  and communicate messages with clarity.Every project reflects our focus on innovation, precision, and design excellence.
-</p>
+              <p
+                ref={descRef}
+                className="text-white text-sm md:text-xl font-medium leading-relaxed"
+              >
+                We craft impactful visual solutions that elevate brands, engage audiences,
+                and communicate messages with clarity.Every project reflects our focus on innovation, precision, and design excellence.
+              </p>
 
 
             </div>
@@ -144,7 +144,7 @@ export default function ProjectsSection() {
         <ProjectsCarousel />
 
         <div className="mt-12 md:mt-16 flex justify-center">
-          <ModernButton text="View more" onClick={()=>router.push("/projects")} />
+          <ModernButton text="View more" onClick={() => router.push("/projects")} />
         </div>
       </div>
     </section>

@@ -1,5 +1,8 @@
 "use client";
 
+import FlipText from "@/components/animation/FlipText";
+import { useId } from "react";
+
 export default function SectionTitle({
   title = "",
   // offset = {
@@ -9,12 +12,15 @@ export default function SectionTitle({
   className = "",
   ClrGradet1 = "#000",
   ClrGradet2 = "#70C879",
+
 }) {
+  const gradientId = useId();
+
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       {/* Title */}
       <h2 className="font-host inline-block text-3xl md:text-4xl xl:text-[2.625rem] font-semibold py-1 rounded-full">
-        {title}
+        <FlipText word={title} />
       </h2>
 
       {/* Decorative Ring */}
@@ -39,7 +45,7 @@ export default function SectionTitle({
         >
           <defs>
             <linearGradient
-              id="borderGradient"
+              id={gradientId}
               x1="0%"
               y1="0%"
               x2="100%"
@@ -55,7 +61,7 @@ export default function SectionTitle({
             cy="26"
             r="25"
             fill="none"
-            stroke="url(#borderGradient)"
+            stroke={`url(#${gradientId})`}
             strokeWidth="1.5"
             strokeDasharray="78.5 30.5"
             strokeDashoffset="22.25"

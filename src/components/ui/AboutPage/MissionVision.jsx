@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Container from "../../common/Layout/Container";
 import PillerAnimation from "@/components/animation/PillerAnimation";
+import SectionTitle from "@/components/common/Headers/SectionTitle";
 
 export default function MissionVisionSection() {
     return (
         <section className="relative w-full   py-10 md:py-20">
-         <PillerAnimation/>
+            <PillerAnimation />
             <Container>
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
 
@@ -14,36 +15,12 @@ export default function MissionVisionSection() {
                         <div className=" rounded-2xl   h-full flex flex-col gap-5">
 
                             <div className="flex items-center gap-3">
-                                <h2 className=" font-host inline-block text-3xl md:text-4xl xl:text-[2.625rem] font-semibold  py-1  rounded-full ">
-                                    Mission
-                                </h2>
+                                <SectionTitle title="Mission" />
 
-                                <div className="relative -left-[8%] lg:-left-[5%]  flex items-center justify-center w-11 h-11 md:w-12 md:h-12 lg:w-[52px] lg:h-[52px] rounded-full flex-shrink-0">
-                                    <svg
-                                        className="absolute inset-0 w-full h-full -rotate-45 transition-all duration-300"
-                                        viewBox="0 0 52 52"
-                                        style={{ opacity: 0.7 }}
-                                    >
-                                        <defs>
-                                            <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                <stop offset="0%" style={{ stopColor: "#0000", stopOpacity: 1 }} />
-                                                <stop offset="100%" style={{ stopColor: "#70C879", stopOpacity: 1 }} />
-                                            </linearGradient>
-                                        </defs>
-                                        <circle
-                                            cx="26"
-                                            cy="26"
-                                            r="25"
-                                            fill="none"
-                                            stroke="url(#borderGradient)"
-                                            strokeWidth="1.5"
-                                        />
-                                    </svg>
-                                </div>
                             </div>
 
                             <p className=" text-lg md:text-xl max-w-xl  font-medium leading-relaxed  py-4">
-                            Our mission is to deliver high-quality commercial display solutions that help businesses communicate, collaborate, and operate more effectively. We focus on providing reliable, certified screens with expert installation and support to ensure every project performs at the highest standard.
+                                Our mission is to deliver high-quality commercial display solutions that help businesses communicate, collaborate, and operate more effectively. We focus on providing reliable, certified screens with expert installation and support to ensure every project performs at the highest standard.
                             </p>
 
                             <div className="w-full flex justify-start">
@@ -68,36 +45,13 @@ export default function MissionVisionSection() {
                         <div className=" rounded-2xl  h-full flex flex-col gap-5">
 
                             <div className="flex items-center gap-3">
-                                <h2 className=" font-host inline-block text-3xl md:text-4xl xl:text-[2.625rem] font-semibold  py-1  rounded-full ">
-                                    Vision
-                                </h2>
+                                <SectionTitle title="Vision" />
 
-                                <div className="relative -left-[8%] lg:-left-[5%]  flex items-center justify-center w-11 h-11 md:w-12 md:h-12 lg:w-[52px] lg:h-[52px] rounded-full flex-shrink-0">
-                                    <svg
-                                        className="absolute inset-0 w-full h-full -rotate-45 transition-all duration-300"
-                                        viewBox="0 0 52 52"
-                                        style={{ opacity: 0.7 }}
-                                    >
-                                        <defs>
-                                            <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                <stop offset="0%" style={{ stopColor: "#0000", stopOpacity: 1 }} />
-                                                <stop offset="100%" style={{ stopColor: "#70C879", stopOpacity: 1 }} />
-                                            </linearGradient>
-                                        </defs>
-                                        <circle
-                                            cx="26"
-                                            cy="26"
-                                            r="25"
-                                            fill="none"
-                                            stroke="url(#borderGradient)"
-                                            strokeWidth="1.5"
-                                        />
-                                    </svg>
-                                </div>
+
                             </div>
 
                             <p className=" text-lg md:text-xl max-w-xl font-medium leading-relaxed  py-4">
-                               Our vision is to become a trusted leader in display technology by providing innovative, dependable, and future-ready screen solutions. We aim to support businesses worldwide with cutting-edge visual systems that enhance engagement, productivity, and decision-making.
+                                Our vision is to become a trusted leader in display technology by providing innovative, dependable, and future-ready screen solutions. We aim to support businesses worldwide with cutting-edge visual systems that enhance engagement, productivity, and decision-making.
                             </p>
 
                             <div className="w-full flex justify-start">

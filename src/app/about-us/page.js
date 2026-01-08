@@ -46,9 +46,7 @@ const page = () => {
     <div>
       <Herosection
         title={"ABOUT US"}
-        description={
-          "Dorem ipsum dolor sit amet, consectetur adipiscing elit. aliquet mattis."
-        }
+
       />
       <AboutSection />
       <MissionVisionSection />
