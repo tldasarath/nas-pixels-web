@@ -1,56 +1,45 @@
 "use client";
-
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
-import { cn } from "@/lib/utils";
+import { useInView } from "./useInView";
 
-export default function FlipText({
-  word,
-  duration = 0.5,
-  delayMultiple = 0.08,
-  className,
-}) {
-  const containerRef = useRef(null);
+export default function FlipText({ word }) {
+  const [ref, inView] = useInView();
+  const tl = useRef(null);
 
   useLayoutEffect(() => {
-    if (!containerRef.current) return;
+    const letters = ref.current.querySelectorAll(".flip-letter");
 
-    const ctx = gsap.context(() => {
-      const letters = gsap.utils.toArray(".flip-letter");
-
-      gsap.set(letters, {
-        rotateX: -90,
-        opacity: 0,
-        transformPerspective: 800,
-        transformOrigin: "50% 50%",
-      });
-
-      gsap.to(letters, {
+    tl.current = gsap.timeline({ paused: true });
+    tl.current.fromTo(
+      letters,
+      { rotateX: -90, opacity: 0 },
+      {
         rotateX: 0,
         opacity: 1,
-        duration,
+        stagger: 0.05,
+        duration: 0.5,
         ease: "power3.out",
-        stagger: delayMultiple,
-      });
-    }, containerRef);
+      }
+    );
 
-    return () => ctx.revert();
-  }, [word, duration, delayMultiple]);
+    return () => tl.current?.kill();
+  }, []);
+
+  useLayoutEffect(() => {
+    if (!tl.current) return;
+    inView ? tl.current.play() : tl.current.reverse();
+  }, [inView]);
 
   return (
-    <div
-      ref={containerRef}
-      className="flex justify-center space-x-2 perspective-[800px]"
-    >
-      {word.split("").map((char, i) => (
-        <span
-          key={i}
-          className={cn(
-            "flip-letter inline-block drop-shadow-sm will-change-transform",
-            className
-          )}
-        >
-          {char}
+    <div ref={ref} className="flex flex-wrap">
+      {word.split(" ").map((w, i) => (
+        <span key={i} className="flex mr-2">
+          {w.split("").map((char, j) => (
+            <span key={j} className="flip-letter inline-block">
+              {char}
+            </span>
+          ))}
         </span>
       ))}
     </div>

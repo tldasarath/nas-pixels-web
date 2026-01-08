@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Container from "@/components/common/layout/Container";
+import SectionTitle from "@/components/common/Headers/SectionTitle";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -106,9 +107,7 @@ export default function AboutNasPixels() {
 
           {/* LEFT – TEXT */}
           <div className="about-text space-y-6">
-            <h2 className="text-4xl font-bold">
-              NAS PIXELS
-            </h2>
+            <SectionTitle title="About NAS PIXELS" />
 
             <p className="leading-relaxed">
               At <span className="text-[#70C879] font-semibold">NAS PIXELS</span>,

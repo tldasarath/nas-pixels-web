@@ -71,7 +71,7 @@ export default function WhyChooseUs() {
     >
       <Container>
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
-          
+
           {/* LEFT */}
           <div className="flex flex-col justify-self-center lg:justify-self-start">
             <div ref={titleBlockRef} className="mb-5">
@@ -79,7 +79,7 @@ export default function WhyChooseUs() {
             </div>
 
             <p className="text-gray-300 max-w-[520px] mb-10 text-sm md:text-base leading-relaxed">
-            We supply high-performance commercial display solutions built for clarity, reliability, and long-term use. From offices and retail spaces to control rooms and large installations, our screens are designed to deliver consistent visual impact. With certified products, expert installation, and responsive after-sales support, we ensure your display systems perform at their best.
+              We supply high-performance commercial display solutions built for clarity, reliability, and long-term use. From offices and retail spaces to control rooms and large installations, our screens are designed to deliver consistent visual impact. With certified products, expert installation, and responsive after-sales support, we ensure your display systems perform at their best.
             </p>
 
             <div
@@ -134,9 +134,8 @@ export default function WhyChooseUs() {
                     </button>
 
                     <div
-                      className={`overflow-hidden transition-all duration-300 ${
-                        isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-                      }`}
+                      className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                        }`}
                     >
                       <div className="px-5 pb-5 text-gray-300 text-sm leading-relaxed">
                         {item.description}

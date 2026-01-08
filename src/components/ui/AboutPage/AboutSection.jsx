@@ -5,6 +5,7 @@ import { ModernButton } from "../../common/Button/ModernButton";
 import Container from "../../common/Layout/Container";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import SectionTitle from "@/components/common/Headers/SectionTitle";
 
 const AboutSection = () => {
   const router = useRouter()
@@ -16,32 +17,7 @@ const AboutSection = () => {
           {/* Left Content */}
           <div className="">
             <div className="flex items-center gap-3">
-              <h2 className=" font-host inline-block text-3xl md:text-4xl xl:text-[2.625rem] font-semibold  py-1  rounded-full ">
-                About Us
-              </h2>
-
-              <div className="relative -left-[8%] lg:-left-[5%]  flex items-center justify-center w-11 h-11 md:w-12 md:h-12 lg:w-[52px] lg:h-[52px] rounded-full flex-shrink-0">
-                <svg
-                  className="absolute inset-0 w-full h-full -rotate-45 transition-all duration-300"
-                  viewBox="0 0 52 52"
-                  style={{ opacity: 0.7 }}
-                >
-                  <defs>
-                    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" style={{ stopColor: "#0000", stopOpacity: 1 }} />
-                      <stop offset="100%" style={{ stopColor: "#70C879", stopOpacity: 1 }} />
-                    </linearGradient>
-                  </defs>
-                  <circle
-                    cx="26"
-                    cy="26"
-                    r="25"
-                    fill="none"
-                    stroke="url(#borderGradient)"
-                    strokeWidth="1.5"
-                  />
-                </svg>
-              </div>
+              <SectionTitle title="About Us" />
             </div>
 
             <p className=" text-lg md:text-xl  font-medium leading-relaxed  py-4">
@@ -82,7 +58,7 @@ const AboutSection = () => {
 
         </div>
       </Container>
-    </section>
+    </section >
   );
 };
 

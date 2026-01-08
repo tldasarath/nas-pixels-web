@@ -3,7 +3,7 @@ export const FEATURES = [
     title: "24/7 Support Service",
     icon: "/assets/images/icons/settings-icon.png",
     description:
-      "Ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est.",
+      "Our dedicated support team is available 24/7 to assist you. Contact us anytime for fast and reliable support.",
   },
   {
     title: "Certified & International Quality Standards",

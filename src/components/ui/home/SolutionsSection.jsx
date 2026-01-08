@@ -106,7 +106,7 @@ export default function SolutionsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-white py-16 lg:py-20 overflow-hidden"
+      className="relative w-full  py-16 lg:py-20 overflow-hidden"
     >
       <Container>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-12">
@@ -188,7 +188,7 @@ export default function SolutionsSection() {
         <div className="mt-10 md:mt-12 flex justify-center">
           <ModernButton
             text="Explore Solutions"
-            arrowClr="black"
+            arrowClr="#000000"
             onClick={handleRedirect}
           />
         </div>

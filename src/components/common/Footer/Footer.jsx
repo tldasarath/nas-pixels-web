@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaInstagramSquare, FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
 import Container from "../layout/Container";
 import Link from "next/link";
+import Aurora from "@/components/animation/Aurora";
 
 export default function Footer() {
   return (
@@ -9,21 +10,22 @@ export default function Footer() {
 
       {/* Section 1: Gradient Arc Section - Top */}
 
-      <div className="relative h-40 pointer-events-none z-0">
+   <div className="relative h-40 overflow-hidden pointer-events-none">
 
-        {/* Blurred green glow */}
-        <div className="absolute inset-0 
-    bg-[linear-gradient(0deg,rgba(112,200,121,0.95)_0%,rgba(112,200,121,0.8)_30%,rgba(112,200,121,0.45)_60%,rgba(112,200,121,0.12)_100%)]
-    blur-md">
-        </div>
+  {/* Aurora glow */}
+  <div className="absolute inset-0 z-0">
+    <Aurora
+      colorStops={["#70C879", "#7CFF67", "#70C879"]}
+      amplitude={1.4}
+      blend={0.6}
+      speed={1.0}
+    />
+  </div>
 
-        {/* Sharp black cutout */}
-        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 
-    w-[107%] h-40 bg-black rounded-t-[90%] z-10">
-        </div>
-
-      </div>
-
+  {/* Black arc mask */}
+  <div className="absolute top-20 left-1/2 transform -translate-x-1/2 
+   w-[107%] h-40 bg-black rounded-t-[90%] z-10" />
+</div>
 
 
       {/* Section 2: Rectangle Content Section - Middle */}

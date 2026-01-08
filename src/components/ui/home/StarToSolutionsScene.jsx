@@ -7,8 +7,6 @@ import SolutionsSection from "./SolutionsSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-
 export default function StarToSolutionsScene() {
   const sceneRef = useRef(null);
   const starRef = useRef(null);
@@ -34,7 +32,7 @@ export default function StarToSolutionsScene() {
         scrollTrigger: {
           trigger: starRef.current,
           start: "top top",
-          end: "+=800%", 
+          end: "+=400%", // Reduced from 800% to 400% - much shorter scroll distance
           scrub: true,
           pin: true,
           anticipatePin: 1,
@@ -45,70 +43,45 @@ export default function StarToSolutionsScene() {
       tl.to(imagesRef.current, {
         x: (i) => (i % 2 === 0 ? -120 : 120),
         y: (i) => (i < 2 ? -70 : 70),
-        duration: 1,
-        ease: "power2.out",
+        duration: 0.8,
       });
 
       /* PHASE 2 - Images spread out */
       tl.to(imagesRef.current, {
-        x: (i) => (i % 2 === 0 ? "-40vw" : "40vw"),
-        y: (i) => (i < 2 ? "-40vh" : "40vh"),
+        x: (i) => (i % 2 === 0 ? "-30vw" : "30vw"), // Reduced spread distance
+        y: (i) => (i < 2 ? "-30vh" : "30vh"),
         scale: 0.9,
-        duration: 1,
-        ease: "power2.inOut",
+        duration: 0.8,
       });
 
-      /* PHASE 3 - Text zoom */
+      /* PHASE 3 - Text zoom (shorter duration) */
       tl.to(textRef.current, {
-        scale: 8,
+        scale: 19,
         transformOrigin: "center center",
-        duration: 2,
-        ease: "power3.inOut",
+        duration: 1.2,
       });
 
-      /* PHASE 4 - White reveal & fade images */
-      tl.to(
-        whiteRef.current,
-        {
-          opacity: 1,
-          duration: 0.6,
-          ease: "power2.inOut",
-        },
-        "-=1.4"
-      );
+      /* PHASE 4 - White reveal & fade images SIMULTANEOUSLY */
+      tl.to(whiteRef.current, {
+        opacity: 1,
+        duration: 0.6,
+      }, "-=0.4") // Start earlier, no overlap gap
 
-      tl.to(
-        imagesRef.current,
-        {
-          opacity: 0,
-          duration: 0.6,
-          ease: "power2.out",
-        },
-        "<"
-      );
+      .to(imagesRef.current, {
+        opacity: 0,
+        duration: 0.6,
+      }, "<"); // Start at the same time as white reveal
 
-      /* PHASE 5 - Hold white screen briefly */
-      tl.to({}, { duration: 0.3 });
-
-      /* PHASE 6 - Reveal Solutions (fade white out, fade solutions in) */
+      /* PHASE 5 - IMMEDIATE solutions reveal (no hold duration) */
       tl.to(whiteRef.current, {
         opacity: 0,
-        duration: 0.8,
-        ease: "power2.inOut",
-      });
+        duration: 0.6,
+      }, "-=0.2") // Start white fade immediately after peak
 
-      tl.to(
-        solutionsRef.current,
-        {
-          opacity: 1,
-          duration: 0.8,
-          ease: "power2.inOut",
-        },
-        "<" // Start at the same time as white fades
-      );
-
-      /* PHASE 7 - Hold on solutions before unpin */
-      tl.to({}, { duration: 0.5 });
+      .to(solutionsRef.current, {
+        opacity: 1,
+        duration: 0.6,
+      }, "<"); // Solutions appear as white fades out
 
     }, sceneRef);
 
@@ -117,12 +90,10 @@ export default function StarToSolutionsScene() {
 
   return (
     <section ref={sceneRef} className="relative w-full">
-      {/* PINNED CONTAINER */}
       <div
         ref={starRef}
         className="relative h-screen w-full flex items-center justify-center overflow-hidden"
       >
-        {/* BLACK BACKGROUND LAYER */}
         <div className="absolute inset-0 bg-black z-0" />
 
         {/* Images */}
@@ -157,12 +128,12 @@ export default function StarToSolutionsScene() {
           className="pointer-events-none absolute inset-0 bg-white z-30"
         />
 
-        {/* SOLUTIONS SECTION (REVEALED IN PLACE) */}
+        {/* SOLUTIONS SECTION */}
         <div
           ref={solutionsRef}
           className="absolute inset-0 z-40 overflow-hidden bg-white"
         >
-          <SolutionsSection/>
+          <SolutionsSection />
         </div>
       </div>
     </section>

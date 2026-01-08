@@ -5,6 +5,7 @@ import Herosection from '@/components/TitleBanner/TitleBanner'
 import IndoorSlider from '@/components/ui/ProjectPage/IndoorSlide'
 import OutdoorSection from '@/components/ui/ProjectPage/OutdoorSection'
 import React from 'react'
+import ContactSection from '@/components/ui/contact/ContactSection'
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
         title={"SOLUTIONS"}
       />
       <SolutionsSection/>  
+      <ContactSection/>
      
     </div>
   )
