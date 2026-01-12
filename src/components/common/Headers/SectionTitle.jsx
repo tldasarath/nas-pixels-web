@@ -2,7 +2,11 @@
 
 import FlipText from "@/components/animation/FlipText";
 import { useId } from "react";
-
+import { Zen_Dots } from "next/font/google";
+const zenDots = Zen_Dots({
+  subsets: ["latin"],
+  weight: "400",
+});
 export default function SectionTitle({
   title = "",
   // offset = {
@@ -19,9 +23,13 @@ export default function SectionTitle({
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       {/* Title */}
-      <h2 className="font-host inline-block text-3xl md:text-4xl xl:text-[2.625rem] font-semibold py-1 rounded-full">
-        <FlipText word={title} />
-      </h2>
+ <h2
+  className={`${zenDots.className} inline-block text-3xl md:text-4xl xl:text-[2.625rem] font-semibold py-1 rounded-full`}
+>
+  <FlipText word={title} />
+</h2>
+
+
 
       {/* Decorative Ring */}
       <div

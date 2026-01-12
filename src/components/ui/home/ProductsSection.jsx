@@ -8,6 +8,13 @@ import { useRouter } from "next/navigation";
 import PillerAnimation from "@/components/animation/PillerAnimation";
 
 const ROW_HEIGHT = 120;
+import { Zen_Antique_Soft } from "next/font/google";
+import Link from "next/link";
+
+const zenAntiqueSoft = Zen_Antique_Soft({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 const products = [
   {
@@ -182,7 +189,7 @@ export default function ProductsSection() {
   const flipRef = useRef(null);
 
   return (
-    <section className="relative  py-10 md:pt-8 overflow-visible md:overflow-hidden min-h-screen">
+    <section className="relative bg-black  py-10 md:pt-8 overflow-visible md:overflow-hidden min-h-screen">
 
       <PillerAnimation />
       <Container>
@@ -224,7 +231,7 @@ export default function ProductsSection() {
                 <div key={i} className="rounded-lg border border-[#70C879]/20 overflow-hidden">
                   <button
                     onClick={() => setActive(p)}
-                    className={`w-full px-4 py-3 text-left transition ${isOpen ? "text-[#70C879]" : "text-white/80"
+                    className={`${zenAntiqueSoft.className} w-full px-4 py-3 text-left transition ${isOpen ? "text-[#70C879]" : "text-white/80"
                       }`}
                   >
                     {p.title}
@@ -338,16 +345,24 @@ function CenterImage({ active }) {
 
         {/* Description */}
         <p className="text-xl">{active.description}</p>
-        <div className="flex flex-wrap gap-2">
-          {active.subCategories.slice(0, 3).map((s, i) => (
-            <span
-              key={i}
-              className="px-3 py-1 text-sm rounded-full border border-[#70C879]/60 bg-[#70C879]/10 text-[#70C879]"
-            >
-              {s}
-            </span>
-          ))}
-        </div>
+        <div className="flex flex-wrap gap-x-6 gap-y-2">
+  {active.subCategories.slice(0, 3).map((s, i) => (
+    <Link
+      key={i}
+      href="/products"
+      className="flex items-center gap-2 text-sm text-[#70C879] font-medium"
+    >
+      {/* Arrow */}
+      <span className="text-white">➜</span>
+
+      {/* Text */}
+      <span className="hover:text-[#70C879] transition-colors duration-200">
+        {s}
+      </span>
+    </Link>
+  ))}
+</div>
+
 
         {/* Specs */}
         {/* <div className="grid grid-cols-2 gap-2 text-xs p-1">
@@ -391,7 +406,7 @@ function Row({ row, side, active, setActive }) {
         }`}
     >
       <div className={`flex items-center gap-6 max-w-md ${side === "right" ? "justify-end" : ""}`}>
-        <span className="text-2xl hover:text-[#70C879]">{item.title}</span>
+        <span className={`text-2xl hover:text-[#70C879] ${zenAntiqueSoft.className} `}>{item.title}</span>
       </div>
     </div>
   );

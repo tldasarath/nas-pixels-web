@@ -4,7 +4,11 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ArrowRight } from "lucide-react";
 import { ModernButton } from "@/components/common/Button/ModernButton";
-
+import { Zen_Dots } from "next/font/google";
+const zenDots = Zen_Dots({
+  subsets: ["latin"],
+  weight: "400",
+});
 const DEPTH = 800;
 
 // Default media (images still work exactly the same)
@@ -188,7 +192,7 @@ export default function ImageRing3D({
         ref={heroRef}
         className="absolute -top-5 md:top-0 left-0 right-0 z-10 flex flex-col items-center justify-center pt-16 pb-8 px-4 mb-10 md:mb-0"
       >
-        <h1 className="text-xl md:text-4xl font-bold text-white text-center max-w-2xl mb-8">
+        <h1 className={`${zenDots.className}  text-xl md:text-[40px] leading-[1.8rem] md:leading-[2.8rem] font-bold text-white text-center max-w-4xl mb-8`}>
           {title}
         </h1>
       </div>

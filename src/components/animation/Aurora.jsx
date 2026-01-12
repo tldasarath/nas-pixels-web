@@ -148,7 +148,7 @@ export default function Aurora({
     let raf
     const loop = t => {
       raf = requestAnimationFrame(loop)
-      program.uniforms.uTime.value = t * 0.0004
+      program.uniforms.uTime.value = t * 0.0012
       program.uniforms.uAmplitude.value = propsRef.current.amplitude
       program.uniforms.uBlend.value = propsRef.current.blend
       program.uniforms.uColorStops.value = propsRef.current.colorStops.map(toRGB)
