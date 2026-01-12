@@ -4,7 +4,11 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ProductsSection from "../ui/home/ProductsSection";
-
+import { Zen_Dots } from "next/font/google";
+const zenDots = Zen_Dots({
+  subsets: ["latin"],
+  weight: "400",
+});
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AnimateScrollVideo({ media }) {
@@ -15,6 +19,8 @@ export default function AnimateScrollVideo({ media }) {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      ScrollTrigger.refresh();
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: rootRef.current,
@@ -27,30 +33,19 @@ export default function AnimateScrollVideo({ media }) {
         },
       });
 
-      /* 1️⃣ Video grows to fullscreen */
-      tl.to(
-        videoRef.current,
-        {
-          width: "100vw",
-          height: "100vh",
-          borderRadius: 0,
-          ease: "power2.out",
-        },
-        0
-      );
+      tl.to(videoRef.current, {
+        width: "100vw",
+        height: "100vh",
+        borderRadius: 0,
+        ease: "power2.out",
+      }, 0);
 
-      /* 2️⃣ Text exits cleanly */
-      tl.to(
-        textRef.current,
-        {
-          y: -140,
-          opacity: 0,
-          ease: "power3.out",
-        },
-        0.15
-      );
+      tl.to(textRef.current, {
+        y: -140,
+        opacity: 0,
+        ease: "power3.out",
+      }, 0.1);
 
-      /* 3️⃣ Reveal layer completes BEFORE unpin */
       tl.fromTo(
         revealRef.current,
         { y: "100%" },
@@ -63,49 +58,55 @@ export default function AnimateScrollVideo({ media }) {
   }, []);
 
   return (
-    <section
-      ref={rootRef}
-      className="relative h-screen overflow-hidden bg-black"
-    >
-      {/* VIDEO */}
-      <div
-        ref={videoRef}
-        className="
-          absolute left-1/2 top-1/2
-          -translate-x-1/2 -translate-y-1/2
-          w-[320px] h-[320px]
-          rounded-2xl overflow-hidden
-          z-10
-        "
+    <>
+      <section
+        ref={rootRef}
+        className="relative h-screen bg-black overflow-hidden"
       >
-        <video
-          src={media.mp4}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        />
-      </div>
+        {/* VIDEO */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+          <div
+            ref={videoRef}
+            className="w-[320px] h-[320px] rounded-2xl overflow-hidden"
+          >
+            <video
+              src={media.mp4}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
 
-      {/* HERO TEXT */}
-      <div
-        ref={textRef}
-        className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center pointer-events-none"
-      >
-        <h1 className="text-white text-6xl md:text-8xl font-bold">
-          Welcome to the Future
-        </h1>
-        <p className="text-gray-300 text-xl mt-4 max-w-2xl">
-          Advanced LED display solutions for powerful, immersive visual
-          experiences.
-        </p>
-      </div>
+        {/* HERO TEXT */}
+        <div
+          ref={textRef}
+          className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center pointer-events-none"
+        >
+          <h1 className={`${zenDots.className} text-white text-5xl md:text-8xl font-bold`}>
+            Welcome to the Future
+          </h1>
+          <p className="text-gray-300 text-lg md:text-xl mt-4 max-w-2xl">
+            Advanced LED display solutions for powerful, immersive visual
+            experiences.
+          </p>
+        </div>
 
-      {/* REVEAL LAYER */}
-      <div ref={revealRef} className="absolute inset-0 z-30 bg-black">
+        {/* PRODUCTS REVEAL — desktop only */}
+        <div
+          ref={revealRef}
+          className="hidden md:block absolute inset-0 z-30 bg-black  min-h-screen"
+        >
+          <ProductsSection />
+        </div>
+      </section>
+
+      {/* Mobile Products (single instance) */}
+      <div className="block md:hidden bg-black">
         <ProductsSection />
       </div>
-    </section>
+    </>
   );
 }

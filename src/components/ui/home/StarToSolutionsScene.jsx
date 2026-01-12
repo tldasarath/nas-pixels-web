@@ -4,7 +4,10 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SolutionsSection from "./SolutionsSection";
-
+import localFont from "next/font/local";
+const abducted = localFont({
+  src: "../../../../public/fonts/Itai-Abducted.ttf",
+});
 gsap.registerPlugin(ScrollTrigger);
 
 export default function StarToSolutionsScene() {
@@ -118,8 +121,8 @@ export default function StarToSolutionsScene() {
           ref={textRef}
           className="relative z-20 text-center font-extrabold tracking-tight leading-none text-white"
         >
-          <div className="text-[12vw] md:text-[10vw]">START A</div>
-          <div className="text-[12vw] md:text-[10vw]">PROJECT</div>
+          <div className={`${abducted.className} text-[12vw] md:text-[10vw]`}>START A</div>
+          <div className={`${abducted.className} text-[12vw] md:text-[10vw]`}>PROJECT</div>
         </div>
 
         {/* WHITE OVERLAY */}
