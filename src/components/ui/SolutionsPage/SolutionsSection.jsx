@@ -26,55 +26,54 @@ export default function SolutionsSection() {
 
     // Card animations
     cardsRef.current.forEach((card, i) => {
-    const fromX = i % 2 === 0 ? -90 : 90;
+      const fromX = i % 2 === 0 ? -50 : 50;
 
-gsap.fromTo(
-  card,
-  { x: fromX, opacity: 0 },
-  {
-    x: 0,
-    opacity: 1,
-    duration: 0.8,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: card,
-      start: "top 85%",
-      toggleActions: "play none none reset",
-    },
-  }
-);
-
+      gsap.fromTo(
+        card,
+        { x: fromX, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
     });
   }, []);
 
   return (
     <section className="relative py-10 md:py-20  overflow-hidden">
-      <PillerAnimation/>
+      <PillerAnimation />
       <Container>
         <div className="absolute max-w-7xl mx-auto inset-0 bg-gradient-to-b from-[#70C879]/10 to-transparent blur-[120px]" />
 
-      <div className="relative max-w-7xl mx-auto px-6">
-        <div className="solutions-title text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Integrated Visual, Digital & AV Solutions
-          </h2>
-          <p className="text-white/70 mt-4 max-w-3xl mx-auto">
-            NAS PIXELS delivers immersive technology solutions that transform
-            spaces, elevate experiences and empower communication.
-          </p>
-        </div>
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="solutions-title text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Integrated Visual, Digital & AV Solutions
+            </h2>
+            <p className="text-white/70 mt-4 max-w-3xl mx-auto">
+              NAS PIXELS delivers immersive technology solutions that transform
+              spaces, elevate experiences and empower communication.
+            </p>
+          </div>
 
-        <div className="grid gap-10">
-          {solutions.map((item, i) => (
-            <SolutionCard
-              key={i}
-              data={item}
-              index={i}
-              ref={(el) => (cardsRef.current[i] = el)}
-            />
-          ))}
+          <div className="grid gap-10">
+            {solutions.map((item, i) => (
+              <SolutionCard
+                key={i}
+                data={item}
+                index={i}
+                ref={(el) => (cardsRef.current[i] = el)}
+              />
+            ))}
+          </div>
         </div>
-      </div>
       </Container>
     </section>
   );

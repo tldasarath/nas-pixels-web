@@ -25,68 +25,36 @@ const inter = Inter({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://naspixels.com"),
-
-  title: {
-    default: "NAS Pixels | Digital Signage & LED Screen Solutions Middle East",
-    template: "%s | NAS Pixels",
-  },
-
+  title: "LED suppliers in Dubai | Naspixels",
   description:
-    "NAS Pixels is a Dubai-based digital innovation company delivering LED screens, digital signage, AV integration, smart home automation, lighting solutions, and content services across the Middle East.",
+    "Nas Pixels Solutions is among the leading LED providers in Dubai that specializes in the supply of advanced LED screens, video walls, digital screens, with technology support.",
 
   keywords: [
-    "digital signage dubai",
-    "led screen solutions uae",
-    "indoor outdoor led screens",
-    "video walls middle east",
-    "av system integration dubai",
-    "smart home automation uae",
-    "home cinema solutions dubai",
-    "lighting solutions middle east",
-    "digital signage saudi arabia",
-    "qatar kuwait oman bahrain led screens",
-    "nas pixels",
+    "led suppliers in dubai",
+    "led display solution",
+    "led signage dubai",
+    "led signage companies in dubai",
+    "led light suppliers in dubai",
+    "best led screen suppliers",
+    "outdoor led screen supplier in dubai",
+    "led screen company in dubai",
+    "dubai led screen",
   ],
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
-  authors: [{ name: "NAS Pixels" }],
 
-  creator: "NAS Pixels",
-  publisher: "NAS Pixels",
-
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+  alternates: {
+    canonical: "https://naspixels.com/",
   },
 
   openGraph: {
+    title: "LED suppliers in Dubai | Naspixels",
+    description:
+      "Nas Pixels Solutions is among the leading LED providers in Dubai that specializes in the supply of advanced LED screens, video walls, digital screens, with technology support.",
+    url: "https://naspixels.com/",
+    siteName: "Naspixels",
     type: "website",
-    locale: "en_US",
-    url: "https://naspixels.com",
-    siteName: "NAS Pixels",
-    title: "NAS Pixels | Digital Signage & LED Screen Solutions",
-    description:
-      "Delivering LED screens, digital signage, AV integration, smart home automation, lighting, and content services across UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman.",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "NAS Pixels | Digital Signage & LED Solutions",
-    description:
-      "Dubai-based digital innovation company specializing in LED screens, AV systems, smart homes, lighting, and content services.",
   },
 };
+
 
 export default function RootLayout({ children }) {
   return (
@@ -107,7 +75,7 @@ export default function RootLayout({ children }) {
           <main className="app-content">
             <EcoPopup />
             {/* <FluidSmokeCursor /> */}
-{/* <GlobalCursor /> */}
+            {/* <GlobalCursor /> */}
             {children}
             <ScrollToTop />
           </main>

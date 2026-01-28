@@ -2,12 +2,16 @@ export const blogs = [
   {
     title: "Digital Signage Trends Transforming Brand Communication Dubai",
     slug: "digital-signage-trends-transforming-brand-communication-dubai",
-    desc:
-      "Discover how digital signage transforms brand communication across retail corporate hospitality environments worldwide",
+    desc: "Discover the newest digital signage Dubai trends that are changing the communication of the brand. Get to know how to use intelligent displays, LED screens, and interactive signages.",
     img: "/assets/images/blog/digital.png",
     author: "TechVision",
     date: "2025-02-10",
-    tags: ["Digital Signage", "Branding", "Dubai"],
+    tags: [
+      "led signage dubai",
+      "led signage companies in dubai",
+      "led light suppliers in dubai",
+      "digital signage dubai",
+    ],
     content: `
 In a competitive market like Dubai, brands need more than traditional advertising to stand out. 
 Digital signage has become a critical communication tool, enabling businesses to deliver dynamic, engaging, and data-driven messages. 
@@ -33,18 +37,17 @@ It is also widely used for internal communication, announcements, and brand stor
 Conclusion  
 Digital signage in Dubai is no longer optional—it is essential for modern brand communication. 
 By combining technology, creativity, and analytics, businesses can deliver impactful messages, enhance engagement, and strengthen brand presence across diverse environments.
-`
+`,
   },
 
   {
-    title: "Smart Home Automation Trends 2026 UAE",
+    title: "Smart Home Automation Trends 2026 in UAE | Naspixels",
     slug: "smart-home-automation-trends-2026-uae",
-    desc:
-      "Explore smart home automation trends improving comfort security energy efficiency modern living spaces",
+    desc: "Examine smart home 2026 automation in the UAE. Naspixels makes publications on AI-powered homes, intelligent security, energy efficiency and connected living.",
     img: "/assets/images/blog/smart.png",
     author: "TechVision",
     date: "2025-02-05",
-    tags: ["Smart Home", "Automation", "UAE"],
+    tags: ["smart home automation trends", "led suppliers dubai", "led screen dubai"],
     content: `
 Smart home automation in the United Arab Emirates is evolving rapidly, with 2026 bringing advanced technologies focused on comfort, security, and energy efficiency. 
 Homeowners are increasingly adopting automation solutions to create intelligent, connected living spaces.
@@ -68,18 +71,24 @@ Integrated systems ensure seamless communication between lighting, HVAC, enterta
 Conclusion
 Smart home automation trends in 2026 focus on intelligence, efficiency, and security. 
 In the UAE, automated homes are becoming a practical investment, offering modern comfort, energy savings, and complete control over living environments.
-`
+`,
   },
 
   {
-    title: "Advanced Audiovisual Integration for Modern Workspaces UAE",
+    title: "Advanced Audiovisual Integration for Modern Workspaces in UAE | Naspixels",
     slug: "advanced-audiovisual-integration-for-modern-workspaces-uae",
-    desc:
-      "Learn how audiovisual integration improves collaboration engagement performance across workplaces and education venues",
+    desc: "Get to know how intelligent AV and collaborative technologies are changing the contemporary working environments in UAE according to Naspixels insights.",
     img: "/assets/images/blog/advanced.png",
     author: "TechVision",
     date: "2025-01-28",
-    tags: ["AV Integration", "Workspaces", "UAE"],
+    tags: [
+      "led signage companies in dubai",
+      "led display solution",
+      "transparent led display",
+      "creative led display",
+      "led display solution",
+      "led screens dubai",
+    ],
     content: `
 As workplaces evolve in the UAE, advanced audiovisual (AV) integration has become essential for effective communication and collaboration. 
 Businesses and educational institutions are investing in AV solutions to support hybrid work, digital meetings, and interactive learning.
@@ -102,18 +111,21 @@ Modern AV infrastructure is designed to be scalable and flexible. Organizations 
 Conclusion
 Advanced audiovisual integration is shaping the future of modern workspaces in the UAE. 
 By enhancing collaboration, communication, and performance, AV solutions support productivity and digital transformation across industries.
-`
+`,
   },
 
   {
-    title: "Innovative Lighting Technologies for Architectural Spaces Dubai",
+    title: "Innovative Lighting Technologies for Architectural Spaces in Dubai | Naspixels",
     slug: "innovative-lighting-technologies-for-architectural-spaces-dubai",
-    desc:
-      "Understand lighting technologies shaping architectural aesthetics sustainability and intelligent indoor outdoor spaces",
+    desc: "Explore innovative lighting technologies for architectural spaces in Dubai. Naspixels highlights smart, energy-efficient LED lighting solutions for modern architecture.",
     img: "/assets/images/blog/innovative.png",
     author: "TechVision",
     date: "2025-01-18",
-    tags: ["Lighting", "Architecture", "Dubai"],
+    tags: [
+      "architectural spaces in dubai",
+      "led screens dubai",
+      "led suppliers in dubai",
+    ],
     content: `
 Lighting plays a vital role in architectural design, especially in a design-forward city like Dubai. 
 Innovative lighting technologies now combine aesthetics, sustainability, and intelligent control to enhance architectural spaces both indoors and outdoors.
@@ -136,6 +148,6 @@ Outdoor and landscape lighting improves safety while enhancing the visual identi
 Conclusion
 Innovative lighting technologies are transforming architectural spaces in Dubai. 
 By integrating smart control, sustainability, and design, lighting solutions create intelligent, efficient, and visually compelling environments.
-`
-  }
+`,
+  },
 ];

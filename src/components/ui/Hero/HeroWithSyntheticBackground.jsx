@@ -7,7 +7,7 @@ import { myImages } from "@/data/HeroSectionData";
 export default function HeroWithAnimatedBackground() {
   return (
     <section className="relative w-screen h-screen overflow-hidden bg-black">
-      
+
       {/* 🔹 NEW animated shader background */}
       <div className="absolute inset-0 z-0">
         <SyntheticBackground />
@@ -44,12 +44,23 @@ export default function HeroWithAnimatedBackground() {
         "
       />
 
+      {/* 🔹 Bottom Fade to blend with About Section */}
+      <div
+        className="
+          pointer-events-none
+          absolute bottom-0 left-0 right-0
+          h-[150px] z-10
+          bg-gradient-to-t
+          from-black via-black/80 to-transparent
+        "
+      />
+
       <div className="relative z-10">
         <ImageRing3D
-        images={myImages}
-        backgroundImage="/assets/images/testimonials/testimonial-bg.png"
-        title="Transform Visual Communication with Enterprise-Grade LED Display Solutions"
-        buttonText="Our Products"
+          images={myImages}
+          backgroundImage="/assets/images/testimonials/testimonial-bg.png"
+          title="Transform Visual Communication with Enterprise-Grade LED Display Solutions"
+          buttonText="Our Products"
         />
       </div>
 

@@ -41,6 +41,18 @@ export default function CoreServices() {
       desc: "AV, lighting, projection mapping, and LED systems for events of every scale.",
       list: ["Event AV", "Projection mapping", "Temporary LED", "Live support"],
     },
+    {
+      title: "Home & Building Automation",
+      tag: "INTELLIGENT LIVING & WORKSPACES",
+      desc: "Smart automation solutions that seamlessly control lighting, climate, security, and audiovisual systems for enhanced comfort, efficiency, and control.",
+      list: [
+        "Smart homes",
+        "Lighting & climate control",
+        "Security & surveillance systems",
+        "Centralized control panels",
+        "Energy management solutions"
+      ],
+    },
   ];
 
   useEffect(() => {
@@ -56,11 +68,11 @@ export default function CoreServices() {
         stagger: 0.25,
         duration: 1.2,
         ease: "power4.out",
-     scrollTrigger: {
-  trigger: sectionRef.current,
-  start: "top 75%",
-  toggleActions: "play reset play reset",
-}
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          toggleActions: "play reset play reset",
+        }
 
       }
     );
@@ -78,7 +90,7 @@ export default function CoreServices() {
   return (
     <section ref={sectionRef} className=" py-10 md:py-20 relative overflow-hidden">
       <Container>
-      <div className="glow absolute inset-0  rounded-full max-w-7xl mx-auto" />
+        <div className="glow absolute inset-0  rounded-full max-w-7xl mx-auto" />
 
         <div className=" text-center mb-24">
           <h2 className="text-5xl font-bold text-white">

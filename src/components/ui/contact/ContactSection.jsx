@@ -94,7 +94,7 @@ export default function ContactSection() {
 
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
-    } else if (!/^\d{8,15}$/.test(formData.phone)) {
+    } else if (!/^\+?[\d\s-]{8,20}$/.test(formData.phone)) {
       newErrors.phone = "Enter a valid phone number";
     }
 

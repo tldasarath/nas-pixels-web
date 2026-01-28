@@ -10,7 +10,7 @@ const SolutionCard = forwardRef(function SolutionCard({ data, index }, ref) {
       ref={ref}
       className="grid md:grid-cols-2 gap-10 items-center 
       border-2 border-dashed border-[#70C879] hover:border-solid
-      rounded-2xl p-8 shadow-xl overflow-hidden transition-all duration-300"
+      rounded-2xl p-8 shadow-xl overflow-hidden"
     >
       {/* TEXT */}
       <div className={`${isEven ? "order-1" : "order-2"} space-y-4`}>

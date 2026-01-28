@@ -12,34 +12,37 @@ import BottomBanner from "@/components/ui/AboutPage/BottomBanner";
 import StorySection from "@/components/ui/AboutPage/StorySection";
 
 export const metadata = {
-  title: "About NAS Pixels | Digital Innovation & LED Screen Experts",
+  title: "LED signage companies in Dubai | LED Display Solution",
   description:
-    "Learn about NAS Pixels, a Dubai-based digital innovation company specializing in LED screens, digital signage, AV integration, smart home automation, lighting solutions, and content services across the Middle East.",
+    "We are an LED signage company in Dubai providing businesses with innovative LED displays, digital screens, video walls, and interactive kiosk displays.",
 
   keywords: [
-    "about nas pixels",
-    "digital signage company dubai",
-    "led screen company uae",
-    "av integration middle east",
-    "smart home automation dubai",
-    "digital innovation company middle east",
+    "led signage companies in dubai",
+    "led display solution",
+    "transparent led display",
+    "creative led display",
+    "led screens dubai",
+    "outdoor led screen supplier in dubai",
+    "led screen company in dubai",
+    "led suppliers in dubai",
   ],
 
-  openGraph: {
-    title: "About NAS Pixels",
-    description:
-      "Founded in Dubai, NAS Pixels delivers innovative LED screens, digital signage, AV systems, smart home automation, lighting, and content services across the Middle East.",
-    url: "https://naspixels.com/about",
-    type: "website",
+  alternates: {
+    canonical: "https://naspixels.com/about-us",
   },
 
-  twitter: {
-    card: "summary_large_image",
-    title: "About NAS Pixels",
+  openGraph: {
+    title: "LED signage companies in Dubai | LED Display Solution",
     description:
-      "Dubai-based digital innovation company delivering LED screens, AV integration, smart homes, lighting, and content services.",
+      "We are an LED signage company in Dubai providing businesses with innovative LED displays, digital screens, video walls, and interactive kiosk displays.",
+    url: "https://naspixels.com/about-us",
+    siteName: "Naspixels",
+    type: "website",
   },
 };
+
+
+
 
 const page = () => {
   return (
@@ -50,11 +53,11 @@ const page = () => {
       />
       <AboutSection />
       <MissionVisionSection />
-      <StorySection/>
-      <AboutNasPixels/>
-      <CoreServices/>
-      <BottomBanner/>
-      <ContactSection/>
+      <StorySection />
+      <AboutNasPixels />
+      <CoreServices />
+      <BottomBanner />
+      <ContactSection />
     </div>
   );
 };

@@ -9,6 +9,7 @@ export function generateStaticParams() {
     slug: product.slug,
   }));
 }
+
 export default function Page({ params }) {
   const product = products.find(p => p.slug === params.slug);
 

@@ -21,7 +21,7 @@ export function SmoothScrollProvider({ children, options = {} }) {
 
     const init = async () => {
       const instance = await getLenisInstance(options);
-      
+
       if (mounted && instance) {
         setLenis(instance);
         setIsReady(true);

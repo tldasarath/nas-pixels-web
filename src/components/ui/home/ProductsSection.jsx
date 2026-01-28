@@ -1,11 +1,12 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import SectionTitle from "@/components/common/Headers/SectionTitle";
 import Container from "@/components/common/layout/Container";
 import { ModernButton } from "@/components/common/button/ModernButton";
 import { useRouter } from "next/navigation";
 import PillerAnimation from "@/components/animation/PillerAnimation";
+import gsap from "gsap";
 
 const ROW_HEIGHT = 120;
 import { Zen_Antique_Soft } from "next/font/google";
@@ -222,7 +223,7 @@ export default function ProductsSection() {
           </div>
 
           {/* MOBILE VIEW (Accordion) */}
-         
+
           <div className="md:hidden space-y-4 ">
             {products.map((p, i) => {
               const isOpen = active.title === p.title;
@@ -267,16 +268,16 @@ export default function ProductsSection() {
 
                       {/* Description */}
                       <p className="text-sm text-white/80">{p.description}</p>
- <div className="flex flex-wrap gap-2">
-          {active.subCategories.slice(0, 3).map((s, i) => (
-            <span
-              key={i}
-              className="px-3 py-1 text-sm rounded-full border border-[#70C879]/60 bg-[#70C879]/10 text-[#70C879]"
-            >
-              {s}
-            </span>
-          ))}
-        </div>
+                      <div className="flex flex-wrap gap-2">
+                        {active.subCategories.slice(0, 3).map((s, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1 text-sm rounded-full border border-[#70C879]/60 bg-[#70C879]/10 text-[#70C879]"
+                          >
+                            {s}
+                          </span>
+                        ))}
+                      </div>
                       {/* Specs */}
                       {/* <div className="grid grid-cols-2 gap-3 text-xs text-white/80">
                         <div>
@@ -314,6 +315,31 @@ export default function ProductsSection() {
 
 function CenterImage({ active }) {
   const router = useRouter();
+  const subCatsRef = useRef(null);
+
+  useEffect(() => {
+    if (subCatsRef.current) {
+      // Kill any running animations to prevent conflict
+      gsap.killTweensOf(subCatsRef.current.children);
+
+      gsap.fromTo(
+        subCatsRef.current.children,
+        {
+          x: -30,
+          opacity: 0
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: "power3.out",
+          // Removed clearProps so opacity stays at 1
+        }
+      );
+    }
+  }, [active]);
+
   return (
     <div className="w-[380px] flex flex-col">
 
@@ -345,23 +371,23 @@ function CenterImage({ active }) {
 
         {/* Description */}
         <p className="text-xl">{active.description}</p>
-        <div className="flex flex-wrap gap-x-6 gap-y-2">
-  {active.subCategories.slice(0, 3).map((s, i) => (
-    <Link
-      key={i}
-      href="/products"
-      className="flex items-center gap-2 text-sm text-[#70C879] font-medium"
-    >
-      {/* Arrow */}
-      <span className="text-white">➜</span>
+        <div ref={subCatsRef} className="flex flex-wrap gap-x-6 gap-y-2">
+          {active.subCategories.slice(0, 3).map((s, i) => (
+            <Link
+              key={i}
+              href="/products"
+              className="flex items-center gap-2 text-sm text-[#70C879] font-medium opacity-0" // Start hidden for animation
+            >
+              {/* Arrow */}
+              <span className="text-white">➜</span>
 
-      {/* Text */}
-      <span className="hover:text-[#70C879] transition-colors duration-200">
-        {s}
-      </span>
-    </Link>
-  ))}
-</div>
+              {/* Text */}
+              <span className="hover:text-[#70C879] transition-colors duration-200">
+                {s}
+              </span>
+            </Link>
+          ))}
+        </div>
 
 
         {/* Specs */}

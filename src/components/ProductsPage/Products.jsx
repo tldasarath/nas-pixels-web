@@ -130,10 +130,10 @@ function Grid({ items }) {
 function Card({ title, desc, thumbnail, slug }) {
   return (
     <Link
-    //  href={`/products/${slug}`} 
-    href={`/products`} 
-    
-    className="block w-full h-[450px] group">
+      href={`/products/${slug}`}
+      // href={`/products`}
+
+      className="block w-full h-[450px] group">
       <div className="relative group w-full h-[450px]">
 
         {/* Gradient Border */}
