@@ -407,7 +407,7 @@ function CenterImage({ active }) {
             <div className="text-white "><span className="text-xl">{active.brightness}</span></div>
           </div>
         </div> */}
-        <div>
+        <div className="flex justify-center">
           <ModernButton text="View More" onClick={() => router.push("/products")} />
         </div>
 

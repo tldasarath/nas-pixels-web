@@ -16,7 +16,7 @@ const SOLUTIONS = [
   { title: "Government & Corporate", image: "/assets/images/solutions/solution2.png" },
   { title: "Hospitality & Entertainment", image: "/assets/images/solutions/solution3.png" },
   { title: "Education & Conference", image: "/assets/images/solutions/solution4.png" },
-  { title: "Events & Exhibitions", image: "/assets/images/solutions/solution5.png" },
+  { title: "Transportation & Airports", image: "/assets/images/solutions/solution5.png" },
   { title: "Retail & Shopping Malls", image: "/assets/images/solutions/solution6.png" },
 ];
 
@@ -122,7 +122,7 @@ export default function SolutionsSection() {
                 ref={descRef}
                 className="text-gray-700 leading-relaxed max-w-xl lg:text-right"
               >
-                Advanced visual solutions engineered to improve communication, 
+                Advanced visual solutions engineered to improve communication,
                 elevate engagement, and deliver consistent performance across industries.
               </p>
             </div>

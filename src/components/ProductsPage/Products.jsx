@@ -9,13 +9,13 @@ import { products } from "@/data/Products";
 
 const categories = [
   "Digital Signage Solutions",
-  "Static Signage & Wayfinding",
   "Audio-Visual System Integration",
   "Content Creation & Management",
   "Maintenance & Support",
   "Lighting Solutions",
   "Home Cinema & Smart Home Automation",
   "Consultation & Project Management",
+  "Static Signage & Wayfinding",
 ];
 
 /* ================= MAIN COMPONENT ================= */

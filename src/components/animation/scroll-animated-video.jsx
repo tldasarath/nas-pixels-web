@@ -86,7 +86,7 @@ export default function AnimateScrollVideo({ media }) {
           className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center pointer-events-none"
         >
           <h1 className={`${zenDots.className} text-white text-5xl md:text-8xl font-bold`}>
-            Welcome to the Future
+            Display the Future
           </h1>
           <p className="text-gray-300 text-lg md:text-xl mt-4 max-w-2xl">
             Advanced LED display solutions for powerful, immersive visual

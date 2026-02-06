@@ -5,8 +5,9 @@ import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provi
 import ScrollToTop from "@/components/common/Scroll/ScrollToTop";
 import EcoPopup from "@/components/common/popup/EcoPopup";
 import Footer from "@/components/common/Footer/Footer";
-import GlobalCursor from "@/components/animation/GlobalCursor";
-import FluidSmokeCursor from "@/components/animation/FluidSmokeCursor";
+import PixelCursor from "@/components/animation/PixelCursor";
+
+import WhatsAppButton from "@/components/common/WhatsAppButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -74,9 +75,9 @@ export default function RootLayout({ children }) {
           <Navbar />
           <main className="app-content">
             <EcoPopup />
-            {/* <FluidSmokeCursor /> */}
-            {/* <GlobalCursor /> */}
+            <PixelCursor />
             {children}
+            <WhatsAppButton />
             <ScrollToTop />
           </main>
           <Footer />

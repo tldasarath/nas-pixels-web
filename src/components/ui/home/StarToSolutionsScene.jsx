@@ -70,10 +70,10 @@ export default function StarToSolutionsScene() {
         duration: 0.6,
       }, "-=0.4") // Start earlier, no overlap gap
 
-      .to(imagesRef.current, {
-        opacity: 0,
-        duration: 0.6,
-      }, "<"); // Start at the same time as white reveal
+        .to(imagesRef.current, {
+          opacity: 0,
+          duration: 0.6,
+        }, "<"); // Start at the same time as white reveal
 
       /* PHASE 5 - IMMEDIATE solutions reveal (no hold duration) */
       tl.to(whiteRef.current, {
@@ -81,10 +81,10 @@ export default function StarToSolutionsScene() {
         duration: 0.6,
       }, "-=0.2") // Start white fade immediately after peak
 
-      .to(solutionsRef.current, {
-        opacity: 1,
-        duration: 0.6,
-      }, "<"); // Solutions appear as white fades out
+        .to(solutionsRef.current, {
+          opacity: 1,
+          duration: 0.6,
+        }, "<"); // Solutions appear as white fades out
 
     }, sceneRef);
 
@@ -97,7 +97,18 @@ export default function StarToSolutionsScene() {
         ref={starRef}
         className="relative h-screen w-full flex items-center justify-center overflow-hidden"
       >
-        <div className="absolute inset-0 bg-black z-0" />
+        <div className="absolute inset-0 bg-black z-0">
+          {/* Green Pixel Background */}
+          <div
+            className="absolute inset-0 opacity-40 pointer-events-none"
+            style={{
+              backgroundImage: `linear-gradient(to right, #70C879 1px, transparent 1px), linear-gradient(to bottom, #70C879 1px, transparent 1px)`,
+              backgroundSize: '20px 20px',
+              maskImage: "radial-gradient(ellipse at center, black 30%, transparent 70%)",
+              WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 70%)",
+            }}
+          />
+        </div>
 
         {/* Images */}
         <div className="absolute inset-0 z-10 flex items-center justify-center">

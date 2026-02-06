@@ -63,7 +63,7 @@ export default function EcoPopup() {
     >
       <div
         ref={popupRef}
-        className="relative w-[90%] bg-black max-w-xl rounded-3xl p-8 md:p-10 text-center border-2 border-dashed"
+        className="relative w-[90%] bg-black max-w-3xl rounded-3xl p-8 md:p-10 text-center border-2 border-dashed"
         style={{
           borderColor: "#70C879",
 
@@ -79,20 +79,17 @@ export default function EcoPopup() {
 
 
         <h2 className="text-3xl md:text-4xl font-bold mb-4 ">
-          We’re Eco-Smart
-        </h2>
+          Our commitment to innovation goes hand in hand with our responsibility to the environment.        </h2>
 
         <p className=" text-base md:text-lg leading-relaxed mb-8">
-          Our digital screens replace printed posters and banners — reducing
-          paper waste, ink usage, and carbon footprint.  
-          Choosing our displays helps create a cleaner, greener future.
+          As a digital and AI-driven company, we design solutions that are efficient, scalable, and environmentally conscious — because progress should be sustainable by default.
         </p>
 
         <button
           onClick={closePopup}
           className="px-10 py-3 rounded-full bg-green-700 hover:bg-green-800 text-white font-semibold tracking-wide shadow-xl transition-all"
         >
-         Explore Now
+          Explore Now
         </button>
       </div>
     </div>

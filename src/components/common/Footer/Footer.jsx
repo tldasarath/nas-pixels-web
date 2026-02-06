@@ -81,6 +81,14 @@ export default function Footer() {
                       </span>
                     </Link>
                   </li>
+                  <li>
+                    <Link href="/products" className="cube-link">
+                      <span className="cube-text">
+                        <span className="front">Products</span>
+                        <span className="top">Products</span>
+                      </span>
+                    </Link>
+                  </li>
 
                   <li>
                     <Link href="/#faq" className="cube-link">
